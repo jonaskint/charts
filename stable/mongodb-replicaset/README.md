@@ -108,6 +108,7 @@ The following table lists the configurable parameters of the mongodb chart and t
 | `readinessProbe.periodSeconds`      | Readiness probe period seconds                                            | `10`                                                |
 | `readinessProbe.successThreshold`   | Readiness probe success threshold                                         | `1`                                                 |
 | `readinessProbe.timeoutSeconds`     | Readiness probe timeout seconds                                           | `1`                                                 |
+| `startupProbe.allowK8sBetaFeature`  | Allow Startup Probe Kubernetes 1.16 beta feature                          | `false`                                             |
 | `startupProbe.failureThreshold`     | Startup probe failure threshold                                           | `60`                                                |
 | `startupProbe.initialDelaySeconds`  | Startup probe initial delay seconds                                       | `5`                                                 |
 | `startupProbe.periodSeconds`        | Startup probe period seconds                                              | `10`                                                |
@@ -443,3 +444,4 @@ With a setup like this each replicaset member can resolve the DNS entry of each 
 Of course you need to make sure to get your security settings right. Enforced TLS is a good idea in a setup like this. Also make sure that you activate auth and get the firewall settings right.
 
 Once you fully migrated remove the old nodes from the replicaset.
+
