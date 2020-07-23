@@ -15,13 +15,12 @@ skipInitialization: false
 
 replicaSetName: rs0
 
-podDisruptionBudget:
-  {}
+podDisruptionBudget: {}
   # maxUnavailable: 1
   # minAvailable: 2
 
 # updateStrategy:
-# type: RollingUpdate
+  # type: RollingUpdate
 
 auth:
   enabled: false
@@ -201,10 +200,10 @@ livenessProbe:
   periodSeconds: 10
   successThreshold: 1
 
-# Startup probe, will only be added since Kubernetes v1.18 or higher
+# Startup probe, will only be added since Kubernetes v1.16 (beta)/v1.18 (stable) or higher
 # When you have a lot of collections/indices, MongoDB need some time to start
 startupProbe:
-  allowK8sBetaFeature: false # If you want to use Kubernetes v1.16
+  allowK8sBetaFeature: false # If you want to use this as a beta feature (>= v1.16 and < v1.18)
   initialDelaySeconds: 5
   timeoutSeconds: 5
   failureThreshold: 60
